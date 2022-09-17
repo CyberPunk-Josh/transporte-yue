@@ -1,0 +1,56 @@
+.hero_fondo{
+    background-image: url('../../../../../img/cotizador.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero_container h1{
+    text-align: center;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+}
+
+.hero_container p{
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+}
+
+/* WhatsApp */
+.whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  
+  .whatsapp-icon {
+    margin-top:13px;
+  }
+  
+  .whatsapp:hover{
+    text-decoration: none;
+    color: #fff;
+  }

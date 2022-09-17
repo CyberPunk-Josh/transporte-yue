@@ -1,3 +1,7 @@
+:root{
+  --main-bg-color: #fb3;
+}
+
 .AppBar{
   display: 'flex';
   flex-direction: row;
@@ -5,8 +9,23 @@
   align-items: flex-start !important;
 }
 
-.logo{
-  top: 15px;
+.logo_karina{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo_karina span{
+  font-weight: bold;
+  font-size: 8px;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.logo_karina img {
+  top: 25px;
+  width: 1.5rem;
+  height: auto;
 }
 
 .css-hyum1k-MuiToolbar-root {
@@ -16,10 +35,13 @@
 /* Burguer Menu*/
 
 /* Position and sizing of burger button */
+
 .bm-burger-button {
+  background-color: #fb3;
+  border-radius: 50%;
   position: fixed;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   left: 30px;
   top: 20px;
 }
@@ -33,12 +55,12 @@
 }
 
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 35px;
+  width: 35px;
 }
 
 .bm-cross {
-  background: #bdc3c7;
+  background: black;
 }
 
 .bm-menu-wrap {
@@ -47,7 +69,7 @@
 }
 
 .bm-menu {
-  background: #002ae7;
+  background: var(--main-bg-color);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -56,14 +78,46 @@
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_nav{
+  margin-right: 5px;
+  width: 2rem !important;
+  height: auto !important;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  color: black;
+  margin-bottom: 5rem;
+  text-decoration: none;
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.nav_logo_karina{
+  margin-top: 5rem;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.nav_logo_karina span{
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.nav_logo_karina img{
+  width: 3rem;
+  height: auto;
 }
