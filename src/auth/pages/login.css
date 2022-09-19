@@ -1,0 +1,40 @@
+:root{
+    --main-login-color: #f6eccd;
+}
+
+.login{
+    background-color: var(--main-login-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_login{
+    background-color: white;
+    position: relative;
+    width: 50%;
+    height: 70%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_form{
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.container_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_logo_login{
+    width: 8rem;
+    height:auto;
+}
