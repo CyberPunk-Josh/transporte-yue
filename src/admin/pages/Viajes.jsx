@@ -3,8 +3,13 @@ import { AddCircle } from '@mui/icons-material'
 import { Box, Button, Grid, InputLabel, MenuItem, Modal, Select, TextField, Typography } from '@mui/material'
 import { AdminLayout } from '../layout/AdminLayout'
 import { ViajesTable } from '../components/ViajesTable'
+import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux'
+import { startNewViaje } from '../../store/viajes/thunk'
 
 export const Viajes = () => {
+
+  const dispatch = useDispatch();
 
   /* Modal features */
   const style = {
@@ -40,6 +45,42 @@ export const Viajes = () => {
     })
   }
 
+  const handleCreateViaje = (e) => {
+    e.preventDefault();
+    if(personas.trim() === '' || destino.trim() === '' || precio.trim() === '' || urlImage.trim() === '' || description.trim() === '') {
+      handleCloseModal();
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Todos los campos son obligatorios'
+      })
+      return;
+    }
+    try {
+      dispatch(startNewViaje({personas, destino, precio, urlImage, description}));
+      handleCloseModal();
+      setViajes({
+        personas: '',
+        destino: '',
+        precio: '',
+        urlImage: '',
+        description: ''
+      })
+      Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: 'Tu nuevo viaje a sido creado exitosamente',
+      })
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong, please try again later',
+      })
+    }
+  }
+
   return (
     <AdminLayout>
       <Grid
@@ -73,6 +114,7 @@ export const Viajes = () => {
               Crea un nuevo viaje
             </Typography>
             <form
+              onSubmit={handleCreateViaje}
               id='modal-modal-description'
               sx={{ mt: 2}}
             >
