@@ -97,7 +97,7 @@ export const Viajes = () => {
                   <TextField
                     label='Destino'
                     type="text"
-                    placeholder="Ingresa el destino"
+                    placeholder="Ejem: Puerto Vallarta, Jalisco"
                     name='destino'
                     value={destino}
                     onChange={handleSelectViaje}

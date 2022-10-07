@@ -3,17 +3,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Analytics, FlightOutlined, LogoutOutlined, TaskOutlined } from '@mui/icons-material';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { startLogout } from '../../store/auth/thunks';
 
 const data = [
     {
         name: 'Admin Panel',
         icon: <Analytics />,
-        route: '/admin/panel'
+        route: '/'
     },
     {
         name: "Viajes",
         icon: <FlightOutlined />,
-        route: '/admin/viajes',
+        route: '/viajes',
     },
     {   name: "Evaluaciones", 
         icon: <TaskOutlined />,
@@ -24,21 +26,28 @@ const data = [
 
 export const Navbar = ({ drawerWith= 240 }) => {
 
-    const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const [open, setOpen] = useState(false);
 
 
-    const getList = () => (
-        <div style={{ width: 250 }} onClick={() => setOpen(false)}>
-        {data.map((item, index) => (
-            <ListItem button key={index}>
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <Link component={RouterLink} color='inherit' to={item.route}>
-              <ListItemText>{item.name}</ListItemText>
-            </Link>
-            </ListItem>
-        ))}
-        </div>
-    );
+  const getList = () => (
+      <div style={{ width: 250 }} onClick={() => setOpen(false)}>
+      {data.map((item, index) => (
+          <ListItem button key={index}>
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          <Link component={RouterLink} color='inherit' to={item.route}>
+            <ListItemText>{item.name}</ListItemText>
+          </Link>
+          </ListItem>
+      ))}
+      </div>
+  );
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(startLogout());
+  }
 
   return (
     <AppBar
@@ -63,6 +72,7 @@ export const Navbar = ({ drawerWith= 240 }) => {
           <Typography variant='h5'noWrap component='div'>ADMIN Karina</Typography>
           <IconButton
             color='error'
+            onClick={handleLogout}
           >
             <LogoutOutlined />
           </IconButton>
