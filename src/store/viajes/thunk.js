@@ -1,7 +1,7 @@
 import { collection, deleteDoc, doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 import { loadViajes } from "../../helpers/loadViajes"
-import { addNewViaje, savingNewViaje, setViajes, deleteViajeById } from "./viajesSlice";
+import { addNewViaje, savingNewViaje, setViajes, deleteViajeById, updateViaje } from "./viajesSlice";
 
 export const startNewViaje = ({description, destino, personas, precio, urlImage}) => {
     return async ( dispatch) => {
@@ -44,5 +44,23 @@ export const startLoadViajes = () => {
         const listViajes = await loadViajes();
 
         dispatch( setViajes(listViajes) );
+    }
+}
+
+export const startUpdateViaje = (viaje) => {
+    return async (dispatch) => {
+        dispatch( savingNewViaje() );
+
+        // id from viaje
+        const { id } = viaje;
+
+        const viajeToFirestore = {...viaje};
+
+        delete viajeToFirestore.id;
+
+        const docRef = doc(FirebaseDB, `viajes/transporte-yue-viajes/viajes/${id}`);
+        await setDoc( docRef, viajeToFirestore, { merge: true } );
+
+        dispatch( updateViaje(viaje) );
     }
 }

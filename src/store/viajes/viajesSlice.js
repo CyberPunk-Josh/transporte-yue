@@ -20,10 +20,22 @@ export const viajesSlice = createSlice({
         },
         deleteViajeById: (state, action) => {
             state.viajes = state.viajes.filter( viaje => viaje.id !== action.payload);
+        },
+        updateViaje: (state, action) => {
+            state.isSaving = false;
+            state.viajes = state.viajes.map((viaje) => {
+                if(viaje.id === action.payload.id) {
+                    return action.payload;
+                }
+
+                return viaje;
+            })
+
+            state.messageSaved = `Trip has been updated`;
         }
     }
 });
 
 
 // Action creators are generated for each case reducer function
-export const { setViajes,savingNewViaje, addNewViaje, deleteViajeById } = viajesSlice.actions;
+export const { setViajes,savingNewViaje, addNewViaje, deleteViajeById, updateViaje } = viajesSlice.actions;
