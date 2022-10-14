@@ -1,0 +1,22 @@
+.encuentra{
+    background-image:  linear-gradient(to top, rgba(179, 255, 171, 0.404) 0%, rgba(18, 255, 247, 0.418) 100%), url(../../../../img/fondo_viaje.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .encuentra .row{
+    height: 25rem;
+  }
+  
+  .encuentra h3{
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.808);
+  }
+  
+  .encuentra p{
+    color: rgba(0, 0, 0, 0.808);
+    font-weight: 500;
+  }

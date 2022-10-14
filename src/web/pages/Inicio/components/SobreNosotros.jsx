@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 
-import './styles/sobreNosotros.css';
+import '../styles/sobreNosotros.css';
 import icono_seguridad from '../../../../img/icono_seguridad.webp';
 import icono_disponible from '../../../../img/icono_disponible.webp';
 import icono_precio from '../../../../img/icono_precio.webp';
