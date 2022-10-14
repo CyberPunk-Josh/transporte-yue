@@ -6,17 +6,17 @@
     background-attachment: fixed;
   }
   
-  .encuentra .row{
-    height: 25rem;
-  }
-  
-  .encuentra h3{
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.808);
-  }
-  
-  .encuentra p{
-    color: rgba(0, 0, 0, 0.808);
-    font-weight: 500;
-  }
+.encuentra{
+  height: 25rem;
+}
+
+.encuentra h3{
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.808);
+}
+
+.encuentra p{
+  color: rgba(0, 0, 0, 0.808);
+  font-weight: 500;
+}

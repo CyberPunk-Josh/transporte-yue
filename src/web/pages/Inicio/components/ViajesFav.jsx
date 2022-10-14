@@ -79,9 +79,9 @@ export const ViajesFav = () => {
                                 {cardItem.text}
                             </Typography>
                         </CardContent>
-                        <Grid container alignItems='center' justifyContent='center'>
+                        <Grid container alignItems='center' justifyContent='center' sx={{ marginBottom: '10px' }}>
                             <Button 
-                                size='small' 
+                                size='medium' 
                                 variant='contained' 
                                 onClick={ () => {
                                     handleOpen(true);
