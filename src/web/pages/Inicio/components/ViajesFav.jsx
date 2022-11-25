@@ -60,7 +60,7 @@ export const ViajesFav = () => {
 
   return (
     <section className="container anuncios mt-5">
-        <h2 className="text-center mb-3">Nuestros Viajes Favoritos</h2>
+        <h2 className="text-center mb-5">Nuestros Viajes Favoritos</h2>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} alignContent='center'>
             {CardInfo.map( cardItem => (
                 <Grid item xs={12} sm={6} md={4} key={cardItem.title} className="card_favs">

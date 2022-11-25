@@ -1,4 +1,14 @@
 .exp_img{
-    max-width: 40%;
+    max-width: 60%;
     height: auto;
 }
+
+.entrada::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: .2rem;
+    background-color: #fb3;
+    margin-top: .5rem;
+  }
+  

@@ -13,25 +13,25 @@ export const Nav = () => {
         <Toolbar className='AppBar'>
             <BurgerMenu className='burguer_menu' customBurgerIcon={ <MenuOutlined />}>
                 <Link to='/user/inicio'>
-                  <span>
+                  <span className='nav-span'>
                     <HomeOutlined className='icon_nav'/>
                     Inicio
                   </span>
                 </Link>
                 <Link to='/user/nosotros'>
-                  <span>
+                  <span className='nav-span'>
                     <PeopleOutline className='icon_nav'/>
                     Nosotros
                   </span>
                 </Link>
                 <Link to='#'>
-                  <span>
+                  <span className='nav-span'>
                     <FlightOutlined className='icon_nav'/>
                     Viajes
                   </span>
                 </Link>
                 <Link to='#'>
-                  <span>
+                  <span className='nav-span'>
                     <EmailOutlined className='icon_nav'/>
                     Contacto
                   </span>

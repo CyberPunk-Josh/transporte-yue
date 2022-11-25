@@ -8,7 +8,7 @@ import icono_precio from '../../../../img/icono_precio.webp';
 export const SobreNosotros = () => {
   return (
     <section className="container sobre-nosotros mt-5">
-        <h2 className="text-center">Más sobre Nosotros</h2>
+        <h2 className="text-center mb-5">Más sobre Nosotros</h2>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Grid item xs={12} sm={4} md={4} className="text-center">
                 <img src={icono_seguridad} alt="icono seguridad" />

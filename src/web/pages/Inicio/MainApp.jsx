@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { Footer } from '../../layout/Footer';
 
 import { Nav } from '../../layout/Nav';
 import { BannerRecorre } from './components/BannerRecorre';
@@ -16,6 +17,7 @@ export const MainApp = () => {
       <ViajesFav />
       <BannerRecorre />
       <NuestraExperiencia />
+      <Footer />
     </Fragment>
   )
 }
