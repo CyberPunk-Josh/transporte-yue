@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Login } from '../../auth/pages/Login'
 import { MainApp } from '../pages/Inicio/MainApp'
-import { Nosotros } from '../pages/Nosotros'
+import { Nosotros } from '../pages/nosotros/Nosotros'
 
 export const WebRoutes = () => {
   return (

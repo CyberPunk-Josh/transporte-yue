@@ -1,0 +1,14 @@
+.titulo_nosotros{
+    text-align: center;
+}
+
+.nosotros_info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nosotros_info img{
+    width: 22rem;
+    height: auto;
+}
