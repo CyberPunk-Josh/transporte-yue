@@ -1,0 +1,13 @@
+/* .carousel-image{
+    width: 50%;
+    height: auto;
+} */
+
+.carousel-grid{
+    width: 50%;
+    height: 50%;
+}
+
+.carousel-title{
+    text-align: center;
+}

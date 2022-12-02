@@ -1,3 +1,8 @@
+.carousel-image img{
+    width: 368px !important;
+    height:552px !important;
+}
+
 .titulo_nosotros{
     text-align: center;
 }

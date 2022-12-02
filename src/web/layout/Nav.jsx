@@ -24,7 +24,7 @@ export const Nav = () => {
                     Nosotros
                   </span>
                 </Link>
-                <Link to='#'>
+                <Link to='/user/viajes'>
                   <span className='nav-span'>
                     <FlightOutlined className='icon_nav'/>
                     Viajes

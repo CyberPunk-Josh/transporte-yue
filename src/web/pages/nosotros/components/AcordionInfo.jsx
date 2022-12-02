@@ -4,6 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { CarouselYue } from './CarouselYue';
 
 export const AcordionInfo = () => {
   return (
@@ -58,8 +59,8 @@ export const AcordionInfo = () => {
                 </AccordionDetails>
             </Accordion>
             </Grid>
-            <Grid item xs={6}>
-
+            <Grid item xs={6} sx={{ display: 'flex', alignItems: 'center', justifyContent:'center'}}>
+                <CarouselYue />
             </Grid>
         </Grid>
     </Container>
