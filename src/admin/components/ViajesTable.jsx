@@ -11,7 +11,9 @@ import { Box, Button, ButtonGroup, Grid, IconButton, InputLabel, MenuItem, Modal
 import { DeleteOutline, EditOutlined } from '@mui/icons-material';
 import Swal from 'sweetalert2';
 import { deleteViaje, startUpdateViaje } from '../../store/viajes/thunk';
+import Pagination from '@mui/material/Pagination';
 import { useState } from 'react';
+import usePagination from '../../helpers/pagination';
 
 const style = {
   position: 'absolute',
@@ -25,8 +27,20 @@ const style = {
   p: 4
 }
 
-
 export const ViajesTable = () => {
+
+  const { viajes } = useSelector( state => state.viajes );
+
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 10;
+
+  const count = Math.ceil(viajes.length / PER_PAGE);
+  const _DATA = usePagination(viajes, PER_PAGE);
+
+  const handleChange = (e,p) => {
+    setPage(p);
+    _DATA.jump(p);
+  }
   
   const dispatch = useDispatch();
 
@@ -45,7 +59,6 @@ export const ViajesTable = () => {
   const handleOpenModal = () => setOpen(true);
   const handleCloseModal = () => setOpen(false);
 
-  const { viajes } = useSelector( state => state.viajes );
     
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
       [`&.${tableCellClasses.head}`]: {
@@ -151,7 +164,7 @@ export const ViajesTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {viajes.map((viaje) => (
+            {_DATA.currentData().map((viaje) => (
               <StyledTableRow key={viaje.id}>
                 <StyledTableCell component='th' scope='row' >
                   {viaje.destino}
@@ -199,6 +212,14 @@ export const ViajesTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <Pagination
+        count={count}
+        size="large"
+        page={page}
+        color="primary"
+        onChange={handleChange}
+        sx={{ marginTop: '25px'}}
+      />
       <Modal
         open={open}
         onClose={handleCloseModal}

@@ -1,0 +1,49 @@
+.viajes-fav{
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 10px;
+}
+
+.viajes-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viajes-personas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viajes-personas p{
+    font-size: 17px;
+}
+
+.viajes-price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viajes-price p{
+    font-size: 17px;
+}
+
+.viajes-tour{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viajes-tour p{
+    font-size: 17px;
+}
+
+.viaje-desc{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

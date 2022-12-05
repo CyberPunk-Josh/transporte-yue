@@ -1,0 +1,16 @@
+.viajes-list-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.viajes-list-info i {
+    font-size: 3rem;
+    color: #fb3;
+}
+
+.img-precios{
+    width: 60%;
+}
