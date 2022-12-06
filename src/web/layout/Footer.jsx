@@ -18,9 +18,9 @@ export const Footer = () => {
                             <h3>Links</h3>
                         </Grid>
                         <Grid item sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-                            <Link to='#'>INICIO</Link>
-                            <Link to='#'>NOSOTROS</Link>
-                            <Link to='#'>CONTACTO</Link>
+                            <Link to='/user/inicio'>INICIO</Link>
+                            <Link to='/user/nosotros'>NOSOTROS</Link>
+                            <Link to='/user/contacto'>CONTACTO</Link>
                         </Grid>
                     </Grid>
                 </Grid>

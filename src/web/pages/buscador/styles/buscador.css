@@ -1,0 +1,23 @@
+.fondo_buscador{
+    background-image: linear-gradient(to top, rgba(204, 165, 80, 0.281) 0%, rgba(221, 245, 0, 0.404) 100%),  url(../../../../img/buscador.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.info_buscador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+  
+.fondo_buscador h1{
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+}

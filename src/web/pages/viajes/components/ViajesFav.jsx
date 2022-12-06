@@ -107,6 +107,19 @@ export const ViajesFav = () => {
                 </Typography>
             </Box>
         </Modal>
+        <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+        >
+            <h4>Busca tu siguiente viaje en nuestro buscador</h4>
+            <Button
+                variant='contained'
+            >
+                Buscador de Viajes
+            </Button>
+        </Grid>
     </Container>
   )
 }
