@@ -2,6 +2,7 @@ import { AttachMoneyOutlined, GroupAddOutlined, RouteOutlined } from '@mui/icons
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Modal, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getMultipleRandom } from '../../../../helpers/getMultipleRandom';
 import { numberWithCommas } from '../../../../helpers/numberWithCommas';
 
@@ -117,7 +118,7 @@ export const ViajesFav = () => {
             <Button
                 variant='contained'
             >
-                Buscador de Viajes
+                <Link to='/user/buscador' className='contact_link'>Buscador de viajes</Link>
             </Button>
         </Grid>
     </Container>

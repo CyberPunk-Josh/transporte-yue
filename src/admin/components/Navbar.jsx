@@ -1,17 +1,12 @@
 import { AppBar, Drawer, Grid, IconButton, Link, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import { Analytics, FlightOutlined, LogoutOutlined, TaskOutlined } from '@mui/icons-material';
+import { FlightOutlined, LogoutOutlined, TaskOutlined } from '@mui/icons-material';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { startLogout } from '../../store/auth/thunks';
 
 const data = [
-    {
-        name: 'Admin Panel',
-        icon: <Analytics />,
-        route: '/'
-    },
     {
         name: "Viajes",
         icon: <FlightOutlined />,
@@ -69,7 +64,7 @@ export const Navbar = ({ drawerWith= 240 }) => {
             {getList()}
         </Drawer>
         <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-          <Typography variant='h5'noWrap component='div'>ADMIN Karina</Typography>
+          <Typography variant='h5'noWrap component='div'>Hola de nuevo Karina</Typography>
           <IconButton
             color='error'
             onClick={handleLogout}

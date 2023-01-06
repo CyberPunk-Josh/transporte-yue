@@ -20,3 +20,8 @@
   color: rgba(0, 0, 0, 0.808);
   font-weight: 500;
 }
+
+.contact_link {
+  text-decoration: none;
+  color: black;
+}

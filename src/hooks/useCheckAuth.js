@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 import { FirebaseAuth } from "../firebase/config";
 import { login, logout } from "../store/auth/authSlice";
+import { startLoadEvaluaciones } from "../store/evaluaciones/thunk";
 import { startLoadViajes } from "../store/viajes/thunk";
 
 export const useCheckAuth = () => {
@@ -16,6 +17,7 @@ export const useCheckAuth = () => {
             if( !user ) {
 
                 dispatch( startLoadViajes());
+                dispatch(startLoadEvaluaciones());
                 
                 return dispatch(logout());
             } 
@@ -25,6 +27,7 @@ export const useCheckAuth = () => {
             dispatch( login({uid, email, displayName}) );
 
             dispatch( startLoadViajes());
+            dispatch(startLoadEvaluaciones());
         })
 
     }, [])

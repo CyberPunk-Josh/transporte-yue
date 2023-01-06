@@ -1,5 +1,6 @@
-import { Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import '../styles/bannerRecorre.css';
 
@@ -20,6 +21,12 @@ export const BannerRecorre = () => {
             <Typography variant='p' component='div'>
               Llena el formulario y un asesor se pondrá en contacto contigo
             </Typography>
+            <Button
+              sx={{ marginTop: '20px'}}
+              variant='contained'
+            >
+              <Link to='/user/contacto' className='contact_link'>Contacto</Link>
+            </Button>
           </Grid>
         </Grid>
     </section>
