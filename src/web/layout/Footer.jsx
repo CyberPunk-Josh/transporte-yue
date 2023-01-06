@@ -49,7 +49,7 @@ export const Footer = () => {
                 </Grid>
                 <Grid item xs={12} md={4} sm={4} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',  maxHeight: '200px', height: '200px'}}>
                     <p className="copyright text-light text-center footer-yue">
-                        &copy; 2021 <span>Tranporte Yue</span>. Todos los derechos reservados
+                        &copy; 2023 <span>Tranporte Yue</span>. Todos los derechos reservados
                     </p>
                 </Grid>
             </Grid>

@@ -126,7 +126,7 @@ export const ActiveEvaluacionesTable = (props) => {
                                               <DeleteOutline />
                                           </IconButton>
                                       </Tooltip>
-                                      <Tooltip title='Mostrar/Ocultar'>
+                                      <Tooltip title='Desactivar'>
                                         <Checkbox
                                           icon={<FavoriteBorder />}
                                           checkedIcon={<Favorite />}

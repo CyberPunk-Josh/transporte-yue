@@ -20,9 +20,10 @@ function Item(props)
           <Grid
             item
             sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}
+            className='testimoniales'
           >
-            <h3>{props.item.nombre}</h3>
-            <p>{props.item.comentario}</p>
+            <h3>-{props.item.nombre}</h3>
+            <p className="testimonial-texto">{props.item.comentario}</p>
             <Rating
               readonly={true}
               initialValue={props.item.rating}
@@ -115,6 +116,7 @@ export const TestimonialesSlider = () => {
 
   return (
       <div className="text-center">
+        <h2>Lo que nuestros clientes dicen:</h2>
         <Carousel
           fullHeightHover={false}
           navButtonsProps={{
@@ -160,6 +162,7 @@ export const TestimonialesSlider = () => {
                     type='text'
                     placeholder='Tu nombre'
                     name='nombre'
+                    autoComplete='off'
                     value={nombre}
                     onChange={handleSetEvaluation}
                   />
@@ -170,6 +173,7 @@ export const TestimonialesSlider = () => {
                     type='text'
                     placeholder='Tu email'
                     name='email'
+                    autoComplete='off'
                     value={email}
                     onChange={handleSetEvaluation}
                   />
@@ -177,17 +181,19 @@ export const TestimonialesSlider = () => {
                 <Grid item xs={12} sx={{ mt: 2, width:200 }}>
                   <TextField
                     sx={{ width: '100%'}}
-                    label='Tu evaluación'
+                    label='Tu comentario'
                     type="text"
-                    placeholder="Escribe aqui tu evaluación"
+                    placeholder="Escribe aqui tu comentario"
                     name='comentario'
+                    autoComplete='off'
                     value={comentario}
                     onChange={handleSetEvaluation}
                     multiline
                     rows={6}
                   />
                 </Grid>
-                <Grid item xs={12} sx={{ mt: 2, width:200, textAlign: 'center' }}>
+                <Grid item xs={12} sx={{ mt: 2, width:200, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+                  <h3>Tu Calificación:</h3>
                   <Rating
                     onClick={ handleRating }
                   />

@@ -1,6 +1,5 @@
 import { Grid, Switch, Typography } from '@mui/material'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { loadEvaluaciones } from '../../helpers/loadEvaluaciones'
 import { ActiveEvaluacionesTable } from '../components/ActiveEvaluacionesTable'
 import { InactiveEvaluacionesTable } from '../components/InactiveEvaluacionesTable'
@@ -42,9 +41,18 @@ export const Evaluaciones = () => {
           justifyContent='space-between'
         >
           <Grid item >
-            <Typography variant='h3' component='div' sx={{ marginBottom: '10px'}}>
-              Evaluaciones
-            </Typography>
+            {
+              checked 
+              ? (
+                <Typography variant='h3' component='div' sx={{ marginBottom: '10px'}}>
+                  Evaluaciones Activas
+                </Typography>
+              ) : (
+                <Typography variant='h3' component='div' sx={{ marginBottom: '10px'}}>
+                  Evaluaciones Inactivas
+                </Typography>
+              )
+            }
           </Grid>
           <Grid item >
             <Switch

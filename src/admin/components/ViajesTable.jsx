@@ -302,15 +302,16 @@ export const ViajesTable = () => {
                     fullWidth
                     type='submit'
                   >
-                    Edit
+                    Editar
                   </Button>
                   <Button
                     sx={{ mt: 1}}
                     variant='outlined'
                     color='error'
                     fullWidth
+                    onClick={handleCloseModal}
                   >
-                    Cancel
+                    Cancelar
                   </Button>
                 </Grid>
               </form>

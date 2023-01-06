@@ -131,7 +131,7 @@ export const InactiveEvaluacionesTable = (props) => {
                                             <DeleteOutline />
                                         </IconButton>
                                     </Tooltip>
-                                    <Tooltip title='Mostrar/Ocultar'>
+                                    <Tooltip title='Activar'>
                                       <Checkbox
                                         icon={<FavoriteBorder />}
                                         checkedIcon={<Favorite />}

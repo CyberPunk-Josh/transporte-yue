@@ -143,6 +143,7 @@ export const Viajes = () => {
                     name='destino'
                     value={destino}
                     onChange={handleSelectViaje}
+                    autoComplete='off'
                   />
                 </Grid>
                 <Grid item xs={6} sx={{ mt:2, width:200}}>
@@ -153,6 +154,7 @@ export const Viajes = () => {
                     name='precio'
                     value={precio}
                     onChange={handleSelectViaje}
+                    autoComplete='off'
                   />
                 </Grid>
                 <Grid item xs={6} sx={{ mt:2, width:200}}>
@@ -163,6 +165,7 @@ export const Viajes = () => {
                     name='urlImage'
                     value={urlImage}
                     onChange={handleSelectViaje}
+                    autoComplete='off'
                   />
                 </Grid>
                 <Grid item xs={12} sx={{ mt:2}} >
@@ -174,6 +177,7 @@ export const Viajes = () => {
                     name='description'
                     value={description}
                     onChange={handleSelectViaje}
+                    autoComplete='off'
                     multiline
                     rows={6}
                   />

@@ -4,3 +4,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.testimoniales .testimonial-texto{
+    color: #000000;
+    font-size: 1.4rem;
+    line-height: 1rem;
+    font-weight: 300;
+}
