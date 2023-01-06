@@ -1,19 +1,21 @@
-import { ButtonGroup, IconButton, Paper, Switch, Table, TableBody, TableContainer, TableHead, TableRow, Tooltip } from '@mui/material'
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { ButtonGroup, Checkbox, IconButton, Paper, Table, TableBody, TableContainer, TableHead, TableRow, Tooltip } from '@mui/material'
+import { useDispatch } from 'react-redux';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import { DeleteOutline} from '@mui/icons-material';
+import { DeleteOutline, Favorite, FavoriteBorder} from '@mui/icons-material';
 import { deleteEvaluacion, startUpdateEvaluacion } from '../../store/evaluaciones/thunk';
 import Swal from 'sweetalert2';
 
 
 
-export const EvaluacionesTable = () => {
+export const InactiveEvaluacionesTable = (props) => {
+
+  const {evaluacionesInactivas, setReloadUsers } = props;
 
     const dispatch = useDispatch();
 
-    const { evaluaciones } = useSelector( state => state.evaluaciones );
+    const inactiveEvaluaciones = evaluacionesInactivas.filter( evaluacion => evaluacion.mostrar === false);
+    
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -35,30 +37,35 @@ export const EvaluacionesTable = () => {
         },
       }));
 
-    // estado de la evaluacion
-    const [evaluacionMostrar, setEvaluacionMostrar] = useState(true);
-    const [evaluacionOcultar, setEvaluacionOcultar] = useState(false);
-
     const handleChangeMostrar = (evaluacion) => {
-        if (evaluacion.mostrar) {
-            dispatch(startUpdateEvaluacion(evaluacion))
-            setEvaluacionOcultar(!evaluacion.mostrar)
-            return;
-        }
-
-        dispatch(startUpdateEvaluacion(evaluacion))
-        setEvaluacionMostrar(evaluacion.mostrar)
-    };
-
-    const handleChangeOcultar = (evaluacion) => {
-        if (evaluacion.mostrar) {
-            dispatch(startUpdateEvaluacion(evaluacion))
-            setEvaluacionOcultar(!evaluacion.mostrar)
-            return;
-        }
-
-        dispatch(startUpdateEvaluacion(evaluacion))
-        setEvaluacionMostrar(evaluacion.mostrar)
+        Swal.fire({
+            title: 'Activar Evaluación',
+            text: `Deseas activar la evaluación de ${evaluacion.nombre}?. Las evaluaciones activadas se mostrarán en la página principal`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, activar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              try {
+                dispatch(startUpdateEvaluacion(evaluacion))
+                setReloadUsers(true);
+                Swal.fire(
+                  'Evaluaciones Actualizadas',
+                  `La evaluación de ${evaluacion.nombre} se ha activado`,
+                  'success'
+                )
+              } catch (error) {
+                console.log(error);
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong, please try again later',
+                })
+              }
+            }
+        })
     };
 
     const handleDeleteEvaluacion = (evaluacion) => {
@@ -107,7 +114,7 @@ export const EvaluacionesTable = () => {
                 </TableHead>
                 <TableBody>
                     {
-                        evaluaciones.map(( evaluacion) => (
+                        inactiveEvaluaciones.map(( evaluacion) => (
                             <StyledTableRow key={evaluacion.id}>
                                 <StyledTableCell component='th' scope='row' >
                                     {evaluacion.nombre}
@@ -125,20 +132,12 @@ export const EvaluacionesTable = () => {
                                         </IconButton>
                                     </Tooltip>
                                     <Tooltip title='Mostrar/Ocultar'>
-                                        <Switch
-                                            defaultChecked={
-                                                evaluacion.mostrar
-                                            }
-                                            onChange={
-                                                evaluacion.mostrar ? 
-                                                    (
-                                                        (e) => handleChangeOcultar(evaluacion, e)
-                                                    ) : 
-                                                    (
-                                                        (e) => handleChangeMostrar(evaluacion, e)
-                                                    )
-                                            }
-                                        />
+                                      <Checkbox
+                                        icon={<FavoriteBorder />}
+                                        checkedIcon={<Favorite />}
+                                        checked={ false }
+                                        onClick={ () => handleChangeMostrar(evaluacion) }
+                                      />
                                     </Tooltip>
                                     </ButtonGroup>
                                 </StyledTableCell>
