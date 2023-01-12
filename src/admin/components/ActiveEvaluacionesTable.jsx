@@ -77,6 +77,7 @@ export const ActiveEvaluacionesTable = (props) => {
           if (result.isConfirmed) {
             try {
               dispatch(deleteEvaluacion(evaluacion));
+              setReloadUsers(true);
               Swal.fire(
                 'Eliminado',
                 `La evaluación de ${evaluacion.nombre} se ha eliminado`,

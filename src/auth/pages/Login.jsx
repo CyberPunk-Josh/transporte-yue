@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import './login.css';
 import logo_web from '../../img/yue.webp';
 import { startLoginWithEmailAndPassword } from '../../store/auth/thunks';
+import Swal from 'sweetalert2';
 
 export const Login = () => {
 
@@ -26,7 +27,16 @@ export const Login = () => {
 
   const handleLoginubmit = (e) => {
     e.preventDefault();
-    dispatch( startLoginWithEmailAndPassword({ email, password}));
+    try {
+      dispatch( startLoginWithEmailAndPassword({ email, password}));
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong, please try again later',
+      })
+    }
   }
 
   return (

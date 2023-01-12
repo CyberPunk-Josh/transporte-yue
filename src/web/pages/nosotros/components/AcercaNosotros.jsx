@@ -11,6 +11,7 @@ export const AcercaNosotros = () => {
         <Grid 
             container 
             spacing={2}
+            columns={{ xs: 4, sm: 8, md: 12 }}
             direction='row'
             justifyContent='space-around'
             alignItems='center'

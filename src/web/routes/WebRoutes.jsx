@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { Login } from '../../auth/pages/Login'
 import { Buscador } from '../pages/buscador/Buscador'
 import { Contacto } from '../pages/contacto/Contacto'
+import { Evaluacion } from '../pages/evaluacion/Evaluacion'
 import { MainApp } from '../pages/Inicio/MainApp'
 import { Nosotros } from '../pages/nosotros/Nosotros'
 import { Viajes } from '../pages/viajes/Viajes'
@@ -14,6 +15,7 @@ export const WebRoutes = () => {
         <Route path="/viajes" element={<Viajes />} />
         <Route path="/buscador" element={<Buscador />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/evaluacion" element={<Evaluacion />} />
 
 
         <Route path="/login" element={<Login />} />

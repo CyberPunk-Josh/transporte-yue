@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, Toolbar } from '@mui/material';
 import { slide as BurgerMenu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
-import { EmailOutlined, FlightOutlined, HomeOutlined, PeopleOutline, MenuOutlined, SearchOutlined} from '@mui/icons-material';
+import { EmailOutlined, FlightOutlined, HomeOutlined, PeopleOutline, MenuOutlined, SearchOutlined, FactCheckOutlined} from '@mui/icons-material';
 
 import './nav.css';
 import logo_web from '../../img/logo_mini.webp';
@@ -40,6 +40,12 @@ export const Nav = () => {
                   <span className='nav-span'>
                     <EmailOutlined className='icon_nav'/>
                     Contacto
+                  </span>
+                </Link>
+                <Link to='/user/evaluacion'>
+                  <span className='nav-span'>
+                    <FactCheckOutlined className='icon_nav'/>
+                    Evaluación 
                   </span>
                 </Link>
               <div className='nav_logo_karina'>

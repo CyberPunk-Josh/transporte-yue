@@ -14,6 +14,7 @@ export const NuestraExperiencia = () => {
             direction="row"
             justifyContent="center"
             alignItems="center"
+            columns={{ xs: 4, sm: 8, md: 12 }}
         >
             <Grid
                 item
@@ -31,14 +32,14 @@ export const NuestraExperiencia = () => {
                 >
                     <Grid
                         item
-                        xs={5}
+                        xs={5} sm={4} md={4}
                         className='text-center'
                     >
                         <img src={yue} alt="logo empresa" className="exp_img" />
                     </Grid>
                     <Grid
                         item
-                        xs={7}
+                        xs={7} sm={4} md={4}
                         className='text-center'
                     >
                         <Typography variant='h3' component='div' className='entrada' >
