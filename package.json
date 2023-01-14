@@ -12,11 +12,13 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
     "env-cmd": "^10.1.0",
     "firebase": "^9.9.1",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
@@ -26,6 +28,7 @@
     "sweetalert2": "^11.4.32",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://vikaturismoytransporte.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

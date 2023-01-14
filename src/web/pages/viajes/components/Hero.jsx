@@ -1,10 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import '../styles/hero.css';
 
 export const Hero = () => {
   return (
     <section className="fondo3">
+      <Helmet>
+        <meta charset='utf8' />
+        <meta name='description' content='Las mejores experiencias en recorridos y transportación terrestre en toda la ciudad de México y república mexicana con VIKA, turismo y transporte.' />
+        <title>Transporte YUE | Viajes</title>
+      </Helmet>
         <div className="hero-rutas">
             <h1 className="text-uppercase nombre ">Rutas de Viaje</h1>
             <p className="lead">VIKA turismo y transporte</p>

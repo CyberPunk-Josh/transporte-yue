@@ -4,12 +4,14 @@ import '../styles/sobreNosotros.css';
 import icono_seguridad from '../../../../img/icono_seguridad.webp';
 import icono_disponible from '../../../../img/icono_disponible.webp';
 import icono_precio from '../../../../img/icono_precio.webp';
+import 'animate.css';
+
 
 export const SobreNosotros = () => {
   return (
     <section className="container sobre-nosotros mt-5">
         <h2 className="text-center mb-5">Más sobre Nosotros</h2>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className='animate__animated animate__backInRight'>
             <Grid item xs={12} sm={4} md={4} className="text-center">
                 <img src={icono_seguridad} alt="icono seguridad" />
                 <h3 className='mb-3 text-uppercase'>Seguridad</h3>

@@ -59,9 +59,11 @@
   background: black;
 }
 
+/* margin of bar menu: Important to modify in production */
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  margin-left: -60px;
 }
 
 .bm-menu {

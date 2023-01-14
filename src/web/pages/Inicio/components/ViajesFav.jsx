@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import 'animate.css';
+
 
 import { Box, Button, Card, CardContent, CardMedia, Container, Grid, Modal, Typography } from '@mui/material';
 
@@ -63,7 +65,7 @@ export const ViajesFav = () => {
         <h2 className="text-center mb-5">Nuestros Viajes Favoritos</h2>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} alignContent='center'>
             {CardInfo.map( cardItem => (
-                <Grid item xs={12} sm={6} md={4} key={cardItem.title} className="card_favs">
+                <Grid item xs={12} sm={6} md={4} key={cardItem.title} className="card_favs animate__animated animate__heartBeat">
                     <Card sx={{ maxWidth: 500}} >
                         <CardMedia
                             component='img'
